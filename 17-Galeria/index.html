@@ -16,27 +16,31 @@
 <body>
     <div class="container">
         <h1 class="text-center">Galeria de Imagenes</h1>
-        <div class="card-columns">
-            <div class="card">
-                <a href="#modal1" data-toggle="modal">
-                    <img src="galeria/1.jpg" alt="" class="card-img-top">
-                </a>
-                <div class="modal fade" id="modal1">
-                    <div class="modal-dialog modal-dialog-centered modal-lg">
-                        <div class="modal-content">
-                            <img src="galeria/1.jpg" alt="" class="img-fluid">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <img src="galeria/2.jpg" alt="" class="card-img-top">
-            </div>
-            <div class="card">
-                <img src="galeria/3.jpg" alt="" class="card-img-top">
-            </div>
+        <div class="card-columns" id=galeria>
+
         </div> <!-- Card Columns-->
     </div>
+
+    <!--Interpolacion-->
+    <script>
+        var galeria = document.getElementById('galeria');
+        var imagen = 1;
+        for (imagen = 1 ; imagen <= 11 ; imagen++){
+        galeria.innerHTML += `<div class="card">
+                <a href="#modal${imagen}" data-toggle="modal">
+                    <img src="galeria/${imagen}.jpg" alt="" class="card-img-top">
+                </a>
+                <div class="modal fade" id="modal${imagen}">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <img src="galeria/${imagen}.jpg" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                </div> 
+            </div> <!-- card-->`;
+        }
+
+    </script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
